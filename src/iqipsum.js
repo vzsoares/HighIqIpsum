@@ -3,7 +3,7 @@ import $ from "jquery";
 
 function iq_ipsum(props) {
   const newWords =
-    "IQ ,whilst ,relies ,whomst ,thou ,thee ,thy ,thine ,art ,crapulous ,grubble ,may ,perhaps ,implies ,knaped ,absolutely ,concludes , that ,visage ,remarkable ,my ,possess ,spoken ,aliment ,abroad ,auditioned ,bane ,conditioned ,conjure ,drought ,expectations ,of ,achievement ,needless ,to ,say ,'tis ,'tween ,besought ,deem ,durstn't ,esteem ,foretold ,forsake ,keen ,malefactor ,obeisance ,reckoned ,tidings ,from ";
+    "IQ ,whilst ,relies ,whomst ,thou ,thee ,thy ,thine ,art ,crapulous ,grubble ,may ,perhaps ,implies ,knaped ,absolutely ,concludes , that ,visage ,remarkable ,my ,possess ,spoken ,aliment ,abroad ,auditioned ,bane ,conditioned ,conjure ,drought ,expectations ,of ,achievement ,needless ,to ,say ,'tis ,'tween ,besought ,deem ,durstn't ,esteem ,foretold ,forsake ,keen ,malefactor ,obeisance ,reckoned ,tidings ,from ,ridge ,ere ,in spite ,despite ,fact ,deprecated ,prior ,connoisseur ,inquiry ,ponder ,cogitate ,scrutinize ,being ,lad ,youngster ,juvenile ,fellow ,acquaintance ,avaricious ,lecturer ,book ,university ,coadjutor ,flawless ";
   const newToggles = newWords.split(",");
   console.log(newWords.split(","));
 
