@@ -32,7 +32,7 @@ function iq_ipsum(props) {
     generatedIpsum = [];
 
     var quotes = Number($("#number-ipsum").val());
-    var iqIpsumToggles = iqIpsum.smartTongue.words;
+    // var iqIpsumToggles = iqIpsum.smartTongue.words;
     var iqIpsumToggles = newToggles;
     for (var i = 0; i < quotes; i++) {
       var randomNumber = Math.floor(Math.random() * iqIpsumToggles.length);
