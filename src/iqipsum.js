@@ -2,14 +2,16 @@ import "./styles.css";
 import $ from "jquery";
 
 function iq_ipsum(props) {
-  const newWords =
-    "IQ ,whilst ,relies ,whomst ,thou ,thee ,thy ,thine ,art ,crapulous ,grubble ,may ,perhaps ,implies ,knaped ,absolutely ,concludes , that ,visage ,remarkable ,my ,possess ,spoken ,aliment ,abroad ,auditioned ,bane ,conditioned ,conjure ,drought ,expectations ,of ,achievement ,needless ,to ,say ,'tis ,'tween ,besought ,deem ,durstn't ,esteem ,foretold ,forsake ,keen ,malefactor ,obeisance ,reckoned ,tidings ,from ,ridge ,ere ,in spite ,despite ,fact ,deprecated ,prior ,connoisseur ,inquiry ,ponder ,cogitate ,scrutinize ,being ,lad ,youngster ,juvenile ,fellow ,acquaintance ,avaricious ,lecturer ,book ,university ,coadjutor ,flawless ";
-  const newToggles = newWords.split(",");
-  console.log(newWords.split(","));
+  // const newWords =
+  //   "IQ ,whilst ,relies ,whomst ,thou ,thee ,thy ,thine ,art ,crapulous ,grubble ,may ,perhaps ,implies ,knaped ,absolutely ,concludes , that ,visage ,remarkable ,my ,possess ,spoken ,aliment ,abroad ,auditioned ,bane ,conditioned ,conjure ,drought ,expectations ,of ,achievement ,needless ,to ,say ,'tis ,'tween ,besought ,deem ,durstn't ,esteem ,foretold ,forsake ,keen ,malefactor ,obeisance ,reckoned ,tidings ,from ,ridge ,ere ,in spite ,despite ,fact ,deprecated ,prior ,connoisseur ,inquiry ,ponder ,cogitate ,scrutinize ,being ,lad ,youngster ,juvenile ,fellow ,acquaintance ,avaricious ,lecturer ,book ,university ,coadjutor ,flawless ,almanac ,wouldn't ,worthlessness ,insist ,neglect ,disallow ,authorize ,campus ,compel ";
+  // const newToggles = newWords.split(",");
+
+  // console.log(newWords.split(","));
 
   var iqIpsum = {
     smartTongue: {
       words: [
+        "IQ ",
         "whilst ",
         "relies ",
         "whomst ",
@@ -17,11 +19,81 @@ function iq_ipsum(props) {
         "thee ",
         "thy ",
         "thine ",
+        "art ",
         "crapulous ",
+        "grubble ",
         "may ",
         "perhaps ",
-        "oyster ",
         "implies ",
+        "knaped ",
+        "absolutely ",
+        "concludes ",
+        " that ",
+        "visage ",
+        "remarkable ",
+        "my ",
+        "possess ",
+        "spoken ",
+        "aliment ",
+        "abroad ",
+        "auditioned ",
+        "bane ",
+        "conditioned ",
+        "conjure ",
+        "drought ",
+        "expectations ",
+        "of ",
+        "achievement ",
+        "needless ",
+        "to ",
+        "say ",
+        "'tis ",
+        "'tween ",
+        "besought ",
+        "deem ",
+        "durstn't ",
+        "esteem ",
+        "foretold ",
+        "forsake ",
+        "keen ",
+        "malefactor ",
+        "obeisance ",
+        "reckoned ",
+        "tidings ",
+        "from ",
+        "ridge ",
+        "ere ",
+        "in spite ",
+        "despite ",
+        "fact ",
+        "deprecated ",
+        "prior ",
+        "connoisseur ",
+        "inquiry ",
+        "ponder ",
+        "cogitate ",
+        "scrutinize ",
+        "being ",
+        "lad ",
+        "youngster ",
+        "juvenile ",
+        "fellow ",
+        "acquaintance ",
+        "avaricious ",
+        "lecturer ",
+        "book ",
+        "university ",
+        "coadjutor ",
+        "flawless ",
+        "almanac ",
+        "wouldn't ",
+        "worthlessness ",
+        "insist ",
+        "neglect ",
+        "disallow ",
+        "authorize ",
+        "campus ",
+        "compel ",
       ],
     },
   };
@@ -32,8 +104,8 @@ function iq_ipsum(props) {
     generatedIpsum = [];
 
     var quotes = Number($("#number-ipsum").val());
-    // var iqIpsumToggles = iqIpsum.smartTongue.words;
-    var iqIpsumToggles = newToggles;
+    var iqIpsumToggles = iqIpsum.smartTongue.words;
+    // var iqIpsumToggles = newToggles;
     for (var i = 0; i < quotes; i++) {
       var randomNumber = Math.floor(Math.random() * iqIpsumToggles.length);
       var iqIpsumText = iqIpsumToggles[randomNumber];
@@ -41,6 +113,8 @@ function iq_ipsum(props) {
         generatedIpsum.push(
           iqIpsumText.charAt(0).toUpperCase() + iqIpsumText.slice(1)
         );
+      } else if (i === quotes - 1) {
+        generatedIpsum.push(iqIpsumText.replace(" ", "") + ".");
       } else {
         generatedIpsum.push(iqIpsumText);
       }
@@ -50,33 +124,34 @@ function iq_ipsum(props) {
   }
   return (
     <div className='parent'>
-      <div class='hero-section'>
-        <h1 class='hero-h1'>Very High Iq Ipsum</h1>
-        <div class='wrapper'>
-          <div class='controls-container'>
+      <div className='hero-section'>
+        <h1 className='hero-h1'>Very High Iq Ipsum</h1>
+        <div className='wrapper'>
+          <div className='controls-container'>
             <input
               type='number'
               id='number-ipsum'
-              class='text-input'
+              className='text-input'
               placeholder='Sentences'
               defaultValue='20'
             />
-            <button class='generate-ipsum' onClick={generateIspum}>
+            <button className='generate-ipsum' onClick={generateIspum}>
               Output Knowledge
             </button>
           </div>
-          <div class='text-output'>
-            <section class='output-ipsum'></section>
+          <div className='text-output'>
+            <section className='output-ipsum'></section>
           </div>
         </div>
         {/* footer */}
-        <div class='iq-footer'>
+        <div className='iq-footer'>
           <div className='inspired'>
             <p style={({ textAlign: "center" }, { paddingBottom: "16px" })}>
               Inspired by <span> </span>
               <a
                 href='https://codepen.io/richfinelli/pen/bpzwQJ'
                 target='_blank'
+                rel='noreferrer'
                 style={({ color: "#063e23" }, { fontSize: "18px" })}
               >
                 Rich Finelli <span> </span>
@@ -85,6 +160,7 @@ function iq_ipsum(props) {
               <a
                 href='https://github.com/RigorMortisTortoise/bob-ross-lorem-ipsum'
                 target='_blank'
+                rel='noreferrer'
               >
                 Holly Burleson
               </a>
@@ -93,9 +169,10 @@ function iq_ipsum(props) {
           <a
             href='https://github.com/vzsoares'
             target='_blank'
+            rel='noreferrer'
             className='github'
           >
-            <i class='fab fa-github-square'></i>
+            <i className='fab fa-github-square'></i>
           </a>
         </div>
       </div>
