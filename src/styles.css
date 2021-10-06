@@ -1,0 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:900);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: black;
+  font-family: "Open Sans";
+  min-height: 60vh;
+}
+@media screen and (max-width: 500px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+
+.text-input,
+button {
+  padding: 1rem;
+  font-size: 24px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.text-input {
+  color: black;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  width: 100px;
+  text-align: center;
+  justify-self: start;
+}
+.generate-ipsum {
+  background-color: #000000d2;
+  width: auto;
+  color: #fff;
+  border: 3px solid rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  font-family: "Open Sans";
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  font-family: big-caslon-fb, serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.generate-ipsum:hover {
+  background-color: white;
+  border: 3px solid black;
+  color: black;
+}
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+.output-ipsum {
+  margin-top: 30px;
+  padding: 15px;
+  line-height: 1.8em;
+  font-size: 20px;
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 80px;
+  background-color: rgba(255, 255, 255, 0.651);
+  border-radius: 10px;
+  color: black;
+}
+/*  */
+.hero-section {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url(images/ff252c077aab7eaa9980c702142ae3abff-wojak-00.2x.w710.webp);
+  background-size: 400px;
+  margin: 0;
+}
+.hero-h1 {
+  font-weight: 900;
+  font-size: 72px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 24px;
+}
+
+.text-output {
+  padding-bottom: 40px;
+}
+
+.iq-footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  padding: 16px;
+  margin: 0 auto;
+}
+.inspired {
+  margin: 0 auto;
+}
+.github {
+  font-size: 5rem;
+  color: black;
+  margin: 0 auto;
+}
