@@ -2,15 +2,73 @@ import "./styles.css";
 import $ from "jquery";
 
 function iq_ipsum(props) {
-  // const newWords =
-  //   "IQ ,whilst ,relies ,whomst ,thou ,thee ,thy ,thine ,art ,crapulous ,grubble ,may ,perhaps ,implies ,knaped ,absolutely ,concludes , that ,visage ,remarkable ,my ,possess ,spoken ,aliment ,abroad ,auditioned ,bane ,conditioned ,conjure ,drought ,expectations ,of ,achievement ,needless ,to ,say ,'tis ,'tween ,besought ,deem ,durstn't ,esteem ,foretold ,forsake ,keen ,malefactor ,obeisance ,reckoned ,tidings ,from ,ridge ,ere ,in spite ,despite ,fact ,deprecated ,prior ,connoisseur ,inquiry ,ponder ,cogitate ,scrutinize ,being ,lad ,youngster ,juvenile ,fellow ,acquaintance ,avaricious ,lecturer ,book ,university ,coadjutor ,flawless ,almanac ,wouldn't ,worthlessness ,insist ,neglect ,disallow ,authorize ,campus ,compel ";
-  // const newToggles = newWords.split(",");
-
-  // console.log(newWords.split(","));
-
   var iqIpsum = {
     smartTongue: {
       words: [
+        "facetious ",
+        "hoax ",
+        "peevish ",
+        "wharf ",
+        "heresy ",
+        "euphemism ",
+        "idyllic ",
+        "junket ",
+        "equivocate ",
+        "dichotomy ",
+        "camaraderie ",
+        "quintessential ",
+        "to ",
+        "brusque ",
+        "surrounding ",
+        "beneath",
+        "vicarious ",
+        "barbarity ",
+        "incredulous ",
+        "tenaciously ",
+        "exculpate ",
+        "nirvana ",
+        "stoic ",
+        "alternatively ",
+        "iconoclastic ",
+        "verbose ",
+        "generally speaking ",
+        "in spite of ",
+        "to summarise ",
+        "paradox ",
+        "thus ",
+        "fort ",
+        "night ",
+        "in brief ",
+        "above all ",
+        "subsequently ",
+        "previously ",
+        "thirdly ",
+        "still another ",
+        "in like manner ",
+        "alike ",
+        "either ",
+        "rather ",
+        "instead ",
+        "nonetheless ",
+        "moreover ",
+        "furthermore ",
+        "truly ",
+        "unquestionably ",
+        "god ",
+        "undoubtedly ",
+        "obviously ",
+        "thereupon ",
+        "forthwith ",
+        "hence ",
+        "as ",
+        "due ",
+        "therefore ",
+        "for ",
+        "nor ",
+        "but ",
+        "or ",
+        "yet ",
+        "so ",
         "IQ ",
         "whilst ",
         "relies ",
@@ -80,6 +138,7 @@ function iq_ipsum(props) {
         "fellow ",
         "acquaintance ",
         "avaricious ",
+        "too ",
         "lecturer ",
         "book ",
         "university ",
@@ -102,21 +161,24 @@ function iq_ipsum(props) {
 
   function generateIspum(e) {
     generatedIpsum = [];
-
-    var quotes = Number($("#number-ipsum").val());
-    var iqIpsumToggles = iqIpsum.smartTongue.words;
-    // var iqIpsumToggles = newToggles;
-    for (var i = 0; i < quotes; i++) {
-      var randomNumber = Math.floor(Math.random() * iqIpsumToggles.length);
-      var iqIpsumText = iqIpsumToggles[randomNumber];
+    var wordAmount = Number($("#number-ipsum").val());
+    var iqIpsumWordList = iqIpsum.smartTongue.words;
+    function getRandomNumber() {
+      return Math.floor(Math.random() * iqIpsumWordList.length - 1);
+    }
+    for (var i = 0; i < wordAmount; i++) {
+      var iqIpsumWord = iqIpsumWordList[getRandomNumber()];
+      while (iqIpsumWord === generatedIpsum[generatedIpsum.length - 2]) {
+        iqIpsumWord = iqIpsumWordList[getRandomNumber()];
+      }
       if (i === 0) {
         generatedIpsum.push(
-          iqIpsumText.charAt(0).toUpperCase() + iqIpsumText.slice(1)
+          iqIpsumWord.charAt(0).toUpperCase() + iqIpsumWord.slice(1)
         );
-      } else if (i === quotes - 1) {
-        generatedIpsum.push(iqIpsumText.replace(" ", "") + ".");
+      } else if (i === wordAmount - 1) {
+        generatedIpsum.push(iqIpsumWord.replace(" ", "") + ".");
       } else {
-        generatedIpsum.push(iqIpsumText);
+        generatedIpsum.push(iqIpsumWord);
       }
     }
 
