@@ -168,7 +168,7 @@ function iq_ipsum(props) {
     }
     for (var i = 0; i < wordAmount; i++) {
       var iqIpsumWord = iqIpsumWordList[getRandomNumber()];
-      while (iqIpsumWord === generatedIpsum[generatedIpsum.length - 2]) {
+      while (iqIpsumWord === generatedIpsum[i - 1]) {
         iqIpsumWord = iqIpsumWordList[getRandomNumber()];
       }
       if (i === 0) {
