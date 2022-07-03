@@ -135,7 +135,7 @@ function iq_ipsum() {
     "juvenile ",
     "fellow ",
     "acquaintance ",
-    "aleticious ",
+    "avaricious ",
     "too ",
     "lecturer ",
     "book ",
