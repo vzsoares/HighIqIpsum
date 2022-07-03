@@ -1,8 +1,8 @@
 import "./styles.css";
 import $ from "jquery";
 
-function iq_ipsum(props) {
-  var words = [
+function iq_ipsum() {
+  const words = [
     "facetious ",
     "hoax ",
     "peevish ",
@@ -135,7 +135,7 @@ function iq_ipsum(props) {
     "juvenile ",
     "fellow ",
     "acquaintance ",
-    "avaricious ",
+    "aleticious ",
     "too ",
     "lecturer ",
     "book ",
@@ -153,33 +153,46 @@ function iq_ipsum(props) {
     "compel ",
   ];
 
-  var generatedIpsum = [];
+  function generateIpsum() {
+    let generatedIpsum = [];
 
-  function generateIspum(e) {
-    generatedIpsum = [];
-    var wordAmount = Number($("#number-ipsum").val());
-    var iqIpsumWordList = words;
+    const wordAmount = Number($("#number-ipsum").val());
+    const iqIpsumWordList = words;
+
     function getRandomNumber() {
       return Math.floor(Math.random() * iqIpsumWordList.length - 1);
     }
-    for (var i = 0; i < wordAmount; i++) {
-      var iqIpsumWord = iqIpsumWordList[getRandomNumber()];
+
+    for (let i = 0; i < wordAmount; i++) {
+      let iqIpsumWord = iqIpsumWordList[getRandomNumber()];
+
+      // avoid repeated word
       while (iqIpsumWord === generatedIpsum[i - 1]) {
         iqIpsumWord = iqIpsumWordList[getRandomNumber()];
       }
+
+      // uppercase first word
       if (i === 0) {
         generatedIpsum.push(
           iqIpsumWord.charAt(0).toUpperCase() + iqIpsumWord.slice(1)
         );
-      } else if (i === wordAmount - 1) {
+      }
+
+      // add period
+      else if (i === wordAmount - 1) {
         generatedIpsum.push(iqIpsumWord.replace(" ", "") + ".");
-      } else {
+      }
+
+      // add normal word
+      else {
         generatedIpsum.push(iqIpsumWord);
       }
     }
 
+    // render result
     $(".output-ipsum").html(generatedIpsum);
   }
+
   return (
     <div className='parent'>
       <div className='hero-section'>
@@ -193,7 +206,7 @@ function iq_ipsum(props) {
               placeholder='Sentences'
               defaultValue='20'
             />
-            <button className='generate-ipsum' onClick={generateIspum}>
+            <button className='generate-ipsum' onClick={generateIpsum}>
               Output Knowledge
             </button>
           </div>
